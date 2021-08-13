@@ -1,0 +1,13 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>All my films in one database!</h1>
+    <p>Remember easily the films you saw, and all the comments you made !</p>
+  </div>
+</div>
+<h1 class ="text-center">Toutes les listes</h1>
+  <ul class="list-inline">
+    <% @lists.each do |list|%>
+      <li class = 'list-items'><%= link_to list.name, list_path(list) %></li>
+    <% end %>
+  </ul>

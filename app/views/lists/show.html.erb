@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class = "text-center mb-10"> <%= @list.name %> </h1>
+  <div class="row">
+    <div class="cards">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="card-trip">
+          <img src= <%=bookmark.movie.poster_url  %> />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= bookmark.movie.title %></h2>
+              <p><%= bookmark.comment %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= bookmark.movie.rating %></h2>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>
+<%= link_to 'Add a bookmark', new_list_bookmark_path(@list) %>
+<%= link_to 'Back to all', lists_path %>
